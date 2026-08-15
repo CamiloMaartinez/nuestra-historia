@@ -1,16 +1,52 @@
-# React + Vite
+# Nuestra Historia 💌
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Espacio digital privado para guardar y revivir recuerdos de nuestra relación: fotos, cartas, momentos importantes y fechas especiales.
 
-Currently, two official plugins are available:
+🔗 **Sitio publicado:** https://camilomaartinez.github.io/nuestra-historia/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack técnico
 
-## React Compiler
+- **Frontend:** React + Vite
+- **Backend:** Supabase (base de datos Postgres, Storage de archivos, Autenticación)
+- **Publicación:** GitHub Pages
+- **Idiomas:** Español / Inglés (react-i18next)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura del proyecto
 
-## Expanding the Oxlint configuration
+src/
+├── components/ # Piezas reutilizables (Navbar, Seal, Contador, Reveal, etc.)
+├── pages/ # Cada sección del sitio (Home, Fotos, Cartas, Recuerdos, Fechas, Historia, Login)
+├── services/ # Comunicación con Supabase (fotos, cartas, recuerdos, auth)
+├── context/ # Estado global de autenticación
+├── hooks/ # Lógica reutilizable (contador, próximas fechas)
+├── i18n/ # Diccionarios de traducción (es.json, en.json)
+├── data/ # Contenido editable: línea de tiempo y fechas importantes
+└── config.js # Fecha de inicio de la relación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Cómo correr el proyecto localmente
+
+1. `npm install`
+2. Crear un archivo `.env` en la raíz (ver `.env.example`) con las claves de Supabase.
+3. `npm run dev`
+4. Abrir `http://localhost:5173/`
+
+## Cómo publicar cambios nuevos
+
+Cada vez que edites código y quieras que se vea en el sitio publicado:
+
+```bash
+git add .
+git commit -m "Descripción breve del cambio"
+git push
+npm run deploy
+```
+
+> **Nota:** subir contenido (fotos, cartas, recuerdos) desde los formularios del sitio **no** requiere hacer esto — ese contenido vive en Supabase y aparece automáticamente en cualquier dispositivo, sin publicar nada de nuevo.
+
+## Cómo administrar contenido
+
+Inicia sesión desde el botón "Administrar" en el navbar, usando el usuario creado en Supabase (Authentication → Users). Solo con sesión iniciada aparecen los formularios para subir fotos, escribir cartas y agregar recuerdos.
+
+## Ver la guía de mantenimiento
+
+Para saber cómo cambiar fechas, colores, textos, o agregar nuevos idiomas, revisa `MANTENIMIENTO.md`.
