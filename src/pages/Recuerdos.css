@@ -1,0 +1,137 @@
+.recuerdos-page {
+  padding: var(--space-md);
+  max-width: 700px;
+  margin: 0 auto;
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.recuerdos-page__title {
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.recuerdo-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0 auto var(--space-lg);
+  padding: var(--space-sm);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.recuerdo-form__title {
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+}
+
+.recuerdo-form input,
+.recuerdo-form textarea {
+  font-family: var(--font-body);
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  resize: vertical;
+}
+
+.recuerdo-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+}
+
+.recuerdo-form button {
+  margin-top: var(--space-xs);
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+  color: var(--color-bg-card);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(181, 73, 91, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity var(--transition);
+}
+
+.recuerdo-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.recuerdo-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.recuerdos-empty {
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.recuerdos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.recuerdo-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  padding: 10px 10px 4px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+  transform: rotate(-1.2deg);
+  transition: transform var(--transition);
+}
+
+.recuerdo-card:nth-child(even) {
+  transform: rotate(1.2deg);
+}
+
+.recuerdo-card:hover {
+  transform: rotate(0deg) translateY(-3px);
+}
+
+.recuerdo-card__img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1px;
+  filter: sepia(14%) saturate(90%) contrast(102%);
+}
+
+.recuerdo-card__contenido {
+  padding: var(--space-sm) 6px var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recuerdo-card__fecha {
+  font-size: 0.65rem;
+}
+
+.recuerdo-card__titulo {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.recuerdo-card__desc {
+  color: var(--color-ink);
+  line-height: 1.6;
+}

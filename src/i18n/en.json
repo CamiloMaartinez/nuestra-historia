@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "story": "Our Story",
+    "photos": "Photos",
+    "letters": "Letters",
+    "memories": "Memories",
+    "dates": "Dates",
+    "brand": "Our Story"
+  },
+  "home": {
+    "since": "Since 01.03.2026",
+    "title_part1": "a letter we",
+    "title_emphasis": "keep",
+    "title_part2": "writing",
+    "subtitle": "It all began the day we decided never to let go",
+    "caption": "featured memory — coming soon",
+    "daily_phrase_eyebrow": "Today's phrase",
+    "proposal": "Our whole story began on that January 3rd, but our love story began the day I finally asked the question I had waited so long to ask: Would you grant me the immense privilege of being your life partner? Would you let me walk by your side, care for your heart, celebrate your dreams, hold your hand through the easy days and the hard ones, build a home with you, and write, together, every chapter God still has in store for us?",
+    "card_story_desc": "The timeline",
+    "card_photos_desc": "Every moment kept",
+    "card_letters_desc": "What we didn't say out loud",
+    "card_memories_desc": "Small big things"
+  },
+  "phrases": [
+    "With you, until the last chapter.",
+    "You're my favorite place.",
+    "Every day with you is a new reason.",
+    "Our story is still my favorite.",
+    "There's no rush when it's with you.",
+    "I choose you today, like the first day.",
+    "Thank you for walking beside me.",
+    "With you, even simple things feel beautiful."
+  ],
+  "counter": {
+    "title": "Our time together",
+    "years": "years",
+    "months": "months",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
+  },
+  "photos": {
+    "title": "Photos",
+    "upload_title": "Add a photo",
+    "field_title": "Title",
+    "field_description": "Description",
+    "field_category": "Category",
+    "field_file": "Choose image",
+    "upload_button": "Upload photo",
+    "uploading": "Uploading...",
+    "empty": "No photos yet. Upload the first one!"
+  },
+  "letters": {
+    "title": "Letters",
+    "new_title": "Write a letter",
+    "field_title": "Title",
+    "field_content": "Write here...",
+    "field_date": "Date",
+    "save_button": "Save letter",
+    "saving": "Saving...",
+    "empty": "No letters yet. Write the first one!",
+    "close": "Close"
+  },
+  "memories": {
+    "title": "Memories",
+    "new_title": "Add a memory",
+    "field_title": "Title",
+    "field_description": "Tell us what happened...",
+    "field_date": "Date",
+    "field_photo": "Photo (optional)",
+    "save_button": "Save memory",
+    "saving": "Saving...",
+    "empty": "No memories yet. Add the first one!"
+  },
+  "auth": {
+    "login_title": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "login_button": "Sign in",
+    "logging_in": "Signing in...",
+    "error": "Incorrect email or password",
+    "logout": "Sign out",
+    "login_link": "Admin"
+  },
+  "story": {
+    "title": "Our Story",
+    "events": {
+      "conocimos": {
+        "title": "We met",
+        "desc": "The day our paths crossed for the first time."
+      },
+      "flores": {
+        "title": "The first flowers",
+        "desc": "The day I gave you the first flowers."
+      },
+      "planes": {
+        "title": "We started planning",
+        "desc": "We started making plans for our next months together."
+      },
+      "concierto": {
+        "title": "Our first concert",
+        "desc": "We sang together with Ferxxo like the world didn't exist."
+      },
+      "vacaciones": {
+        "title": "Our first vacation",
+        "desc": "Our first vacation and plans together."
+      },
+      "cumple": {
+        "title": "My birthday",
+        "desc": "We celebrated it together for the first time."
+      },
+      "novios": {
+        "title": "We decided to be together",
+        "desc": "The day we chose to write this story together."
+      }
+    }
+  },
+  "dates": {
+    "title": "Important Dates",
+    "today": "It's today! 🎉",
+    "tomorrow": "It's tomorrow!",
+    "days_left": "{{dias}} days left",
+    "items": {
+      "conocimos": "We met",
+      "cumpleLu": "Lu's birthday",
+      "cumple": "My birthday",
+      "aniversario": "Dating anniversary"
+    }
+  }
+}

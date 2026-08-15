@@ -1,0 +1,20 @@
+.cursor-corazon {
+  position: fixed;
+  pointer-events: none;
+  font-size: 14px;
+  color: var(--color-accent);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  animation: flotarCorazon 0.9s ease-out forwards;
+}
+
+@keyframes flotarCorazon {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) translateY(0) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--x)), calc(-50% - 45px)) scale(1.1);
+  }
+}

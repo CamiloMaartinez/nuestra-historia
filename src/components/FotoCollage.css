@@ -1,0 +1,38 @@
+.foto-collage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.foto-collage__item {
+  position: absolute;
+  width: 110px;
+  height: 140px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 4px solid var(--color-bg-card);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  animation: flotarSuave 6s ease-in-out infinite;
+}
+
+.foto-collage__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes flotarSuave {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--rot, 0deg)); }
+}
+
+.foto-collage__item--0 { top: 6%; left: 4%; --rot: -8deg; animation-delay: 0s; }
+.foto-collage__item--1 { top: 58%; left: 2%; --rot: 6deg; width: 90px; height: 110px; animation-delay: 1s; }
+.foto-collage__item--2 { top: 8%; right: 5%; --rot: 7deg; animation-delay: 2s; }
+.foto-collage__item--3 { top: 60%; right: 4%; --rot: -6deg; width: 90px; height: 110px; animation-delay: 1.6s; }
+
+@media (max-width: 640px) {
+  .foto-collage__item { width: 68px; height: 88px; }
+}

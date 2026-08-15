@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "story": "Nuestra Historia",
+    "photos": "Fotos",
+    "letters": "Cartas",
+    "memories": "Recuerdos",
+    "dates": "Fechas",
+    "brand": "Nuestra Historia"
+  },
+  "home": {
+    "since": "Desde el 03.01.2026",
+    "title_part1": "una carta que",
+    "title_emphasis": "seguimos",
+    "title_part2": "escribiendo",
+    "subtitle": "Todo empezó el día en que decidimos no soltarnos nunca",
+    "caption": "recuerdo destacado — próximamente",
+    "daily_phrase_eyebrow": "Frase de hoy",
+    "proposal": "Toda nuestra historia empezó ese 03 de enero, pero nuestra historia de amor comenzó cuando te pude hacer la pregunta que tanto tiempo esperé: ¿Me concederías el inmenso privilegio de ser tu compañero de vida? ¿Me permitirías caminar a tu lado, cuidar de tu corazón, celebrar tus sueños, sostener tu mano en los días fáciles y en los difíciles, construir un hogar contigo y escribir, juntos, todos los capítulos que todavía Dios tiene preparados para nosotros?",
+    "card_story_desc": "La línea de tiempo",
+    "card_photos_desc": "Cada momento guardado",
+    "card_letters_desc": "Lo que no dijimos en voz alta",
+    "card_memories_desc": "Pequeñas cosas grandes"
+  },
+  "phrases": [
+    "Contigo hasta el último capítulo.",
+    "Eres mi lugar favorito.",
+    "Cada día contigo es una razón nueva.",
+    "Nuestra historia sigue siendo mi favorita.",
+    "No hay prisa cuando es contigo.",
+    "Te elijo hoy, como el primer día.",
+    "Gracias por caminar a mi lado.",
+    "Contigo, hasta lo simple se siente bonito."
+  ],
+  "counter": {
+    "title": "Nuestro tiempo juntos",
+    "years": "años",
+    "months": "meses",
+    "days": "días",
+    "hours": "horas",
+    "minutes": "minutos",
+    "seconds": "segundos"
+  },
+  "photos": {
+    "title": "Fotos",
+    "upload_title": "Agregar una fotografía",
+    "field_title": "Título",
+    "field_description": "Descripción",
+    "field_category": "Categoría",
+    "field_file": "Elegir imagen",
+    "upload_button": "Subir foto",
+    "uploading": "Subiendo...",
+    "empty": "Todavía no hay fotos. ¡Sube la primera!"
+  },
+  "letters": {
+    "title": "Cartas",
+    "new_title": "Escribir una carta",
+    "field_title": "Título",
+    "field_content": "Escribe aquí...",
+    "field_date": "Fecha",
+    "save_button": "Guardar carta",
+    "saving": "Guardando...",
+    "empty": "Todavía no hay cartas. ¡Escribe la primera!",
+    "close": "Cerrar"
+  },
+  "memories": {
+    "title": "Recuerdos",
+    "new_title": "Agregar un recuerdo",
+    "field_title": "Título",
+    "field_description": "Cuéntanos qué pasó...",
+    "field_date": "Fecha",
+    "field_photo": "Foto (opcional)",
+    "save_button": "Guardar recuerdo",
+    "saving": "Guardando...",
+    "empty": "Todavía no hay recuerdos. ¡Agrega el primero!"
+  },
+  "auth": {
+    "login_title": "Iniciar sesión",
+    "email": "Correo",
+    "password": "Contraseña",
+    "login_button": "Entrar",
+    "logging_in": "Entrando...",
+    "error": "Correo o contraseña incorrectos",
+    "logout": "Cerrar sesión",
+    "login_link": "Administrar"
+  },
+  "story": {
+    "title": "Nuestra Historia",
+    "events": {
+      "conocimos": {
+        "title": "Nos conocimos",
+        "desc": "El día en que nuestros caminos se cruzaron por primera vez."
+      },
+      "flores": {
+        "title": "Las primeras flores",
+        "desc": "El día que te regalé las primeras flores."
+      },
+      "planes": {
+        "title": "Empezamos a planear",
+        "desc": "Comenzamos a hacer planes para nuestros próximos meses."
+      },
+      "concierto": {
+        "title": "Nuestro primer concierto",
+        "desc": "Cantamos juntos con Ferxxo como si el mundo no existiera."
+      },
+      "vacaciones": {
+        "title": "Nuestras primeras vacaciones",
+        "desc": "Nuestras primeras vacaciones y planes juntos."
+      },
+      "cumple": {
+        "title": "Mi cumpleaños",
+        "desc": "Lo celebramos juntos por primera vez."
+      },
+      "novios": {
+        "title": "Decidimos ser novios",
+        "desc": "El día que elegimos escribir esta historia juntos."
+      }
+    }
+  },
+  "dates": {
+    "title": "Fechas Importantes",
+    "today": "¡Es hoy! 🎉",
+    "tomorrow": "¡Es mañana!",
+    "days_left": "faltan {{dias}} días",
+    "items": {
+      "conocimos": "Nos conocimos",
+      "cumpleLu": "Cumpleaños de Lu",
+      "cumple": "Mi cumpleaños",
+      "aniversario": "Aniversario de novios"
+    }
+  }
+}

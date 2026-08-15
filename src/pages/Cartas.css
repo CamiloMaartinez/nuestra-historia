@@ -1,0 +1,203 @@
+.cartas-page {
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+  background-image: repeating-linear-gradient(
+    var(--color-bg) 0px,
+    var(--color-bg) 27px,
+    var(--color-border) 28px
+  );
+}
+
+.cartas-page__title {
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.carta-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-width: 480px;
+  margin: 0 auto var(--space-lg);
+  padding: var(--space-sm);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  font-family: var(--font-mono);
+}
+
+.carta-form__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+}
+
+.carta-form input,
+.carta-form textarea {
+  font-family: var(--font-mono);
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  resize: vertical;
+}
+
+.carta-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+}
+
+.carta-form button {
+  margin-top: var(--space-xs);
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-accent);
+  color: var(--color-bg-card);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--color-gold);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity var(--transition);
+}
+
+.carta-form button:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--color-gold);
+}
+
+.carta-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cartas-empty {
+  text-align: center;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.sobres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-sm);
+}
+
+.sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-md) var(--space-xs);
+  background: var(--color-bg-card);
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition);
+  text-align: center;
+  font-family: var(--font-mono);
+}
+
+.sobre:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  border-color: var(--color-accent);
+}
+
+.sobre__icono {
+  font-size: 1.8rem;
+  color: var(--color-accent);
+}
+
+.sobre__titulo {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.sobre__fecha {
+  font-size: 0.65rem;
+}
+
+.carta-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  z-index: 100;
+}
+
+.carta-modal__hoja {
+  position: relative;
+  background: var(--color-bg-card);
+  border-radius: 2px;
+  padding: calc(var(--space-lg) + 10px) var(--space-md) var(--space-md);
+  max-width: 520px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow:
+    0 3px 0 var(--color-bg),
+    0 6px 0 var(--color-border),
+    0 16px 44px rgba(0, 0, 0, 0.35);
+}
+
+.carta-modal__sello {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-card);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.carta-modal__titulo {
+  font-style: italic;
+  font-size: 1.6rem;
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.carta-modal__contenido {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: var(--color-ink);
+  text-align: left;
+}
+
+.carta-modal__contenido::first-letter {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2.6rem;
+  float: left;
+  line-height: 0.75;
+  margin-right: 6px;
+  color: var(--color-accent);
+}
+
+.carta-modal__cerrar {
+  margin-top: var(--space-md);
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: transparent;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}

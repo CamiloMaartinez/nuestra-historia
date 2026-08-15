@@ -1,0 +1,13 @@
+.frase-del-dia {
+  text-align: center;
+  padding: var(--space-md);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.frase-del-dia__texto {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}

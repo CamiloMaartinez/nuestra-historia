@@ -1,0 +1,14 @@
+.propuesta {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.propuesta__texto {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  line-height: 1.7;
+  color: var(--color-ink);
+}

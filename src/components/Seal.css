@@ -1,0 +1,11 @@
+.seal {
+  border: 1.5px solid var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
