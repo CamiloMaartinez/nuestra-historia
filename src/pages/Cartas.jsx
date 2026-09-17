@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import { guardarCarta, obtenerCartas } from '../services/cartasService';
+import { useTypewriter } from '../hooks/useTypewriter';
 import './Cartas.css';
 import Seal from '../components/Seal';
 
@@ -15,6 +16,11 @@ export default function Cartas() {
   const [contenido, setContenido] = useState('');
   const [fecha, setFecha] = useState(() => new Date().toISOString().slice(0, 10));
   const [cartaAbierta, setCartaAbierta] = useState(null);
+  const [error, setError] = useState(false);
+  const { mostrado: contenidoEscrito, terminado: escrituraTerminada } = useTypewriter(
+    cartaAbierta?.contenido ?? '',
+    !!cartaAbierta
+  );
 
   useEffect(() => {
     cargarCartas();
@@ -35,15 +41,16 @@ export default function Cartas() {
   async function manejarGuardado(e) {
     e.preventDefault();
     setGuardando(true);
+    setError(false);
     try {
       await guardarCarta({ titulo, contenido, fecha_carta: fecha });
       setTitulo('');
       setContenido('');
       setFecha(new Date().toISOString().slice(0, 10));
       await cargarCartas();
-    } catch (error) {
-      console.error('Error al guardar la carta:', error);
-      alert('Hubo un error al guardar la carta. Revisa la consola.');
+    } catch (err) {
+      console.error('Error al guardar la carta:', err);
+      setError(true);
     } finally {
       setGuardando(false);
     }
@@ -89,6 +96,8 @@ export default function Cartas() {
             required
           />
 
+          {error && <p className="form-error">{t('common.error_save')}</p>}
+
           <button type="submit" disabled={guardando}>
             {guardando ? t('letters.saving') : t('letters.save_button')}
           </button>
@@ -106,7 +115,9 @@ export default function Cartas() {
             className="sobre"
             onClick={() => setCartaAbierta(carta)}
           >
-            <span className="sobre__icono">✉</span>
+            <span className="sobre__sello">
+              <Seal size={38} initials="♥" />
+            </span>
             <span className="sobre__titulo">{carta.titulo}</span>
             <span className="sobre__fecha eyebrow">{formatearFecha(carta.fecha_carta)}</span>
           </button>
@@ -123,7 +134,10 @@ export default function Cartas() {
               {formatearFecha(cartaAbierta.fecha_carta)}
             </span>
             <h2 className="carta-modal__titulo">{cartaAbierta.titulo}</h2>
-            <p className="carta-modal__contenido">{cartaAbierta.contenido}</p>
+            <p className="carta-modal__contenido">
+              {contenidoEscrito}
+              {!escrituraTerminada && <span className="carta-modal__cursor" aria-hidden="true" />}
+            </p>
             <button className="carta-modal__cerrar" onClick={() => setCartaAbierta(null)}>
               {t('letters.close')}
             </button>

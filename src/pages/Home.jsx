@@ -21,6 +21,11 @@ export default function Home() {
     <div className="home">
       <section className="hero">
         <FotoCollage />
+        <div className="hero__hearts" aria-hidden="true">
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <span key={i} className={`hero__heart hero__heart--${i}`}>♥</span>
+          ))}
+        </div>
         <div className="hero__eyebrow eyebrow">{t('home.since')}</div>
         <h1 className="hero__title">
           {t('home.title_part1')} <em>{t('home.title_emphasis')}</em><br />

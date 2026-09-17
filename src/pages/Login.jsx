@@ -47,7 +47,7 @@ export default function Login() {
           required
         />
 
-        {error && <p className="login-form__error">{t('auth.error')}</p>}
+        {error && <p className="form-error">{t('auth.error')}</p>}
 
         <button type="submit" disabled={cargando}>
           {cargando ? t('auth.logging_in') : t('auth.login_button')}

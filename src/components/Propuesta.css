@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.propuesta__divisor {
+  display: block;
+  margin: var(--space-xs) 0 var(--space-sm);
+  color: var(--color-gold);
+  font-size: 0.9rem;
+}
+
 .propuesta__texto {
   font-family: var(--font-display);
   font-style: italic;

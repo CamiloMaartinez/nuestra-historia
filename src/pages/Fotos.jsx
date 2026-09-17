@@ -15,6 +15,7 @@ export default function Fotos() {
   const [categoria, setCategoria] = useState('general');
   const [archivo, setArchivo] = useState(null);
   const [fotoAmpliada, setFotoAmpliada] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     cargarFotos();
@@ -37,6 +38,7 @@ export default function Fotos() {
     if (!archivo) return;
 
     setSubiendo(true);
+    setError(false);
     try {
       const url = await subirImagen(archivo);
       await guardarFoto({ titulo, descripcion, categoria, url });
@@ -46,9 +48,9 @@ export default function Fotos() {
       setArchivo(null);
       e.target.reset();
       await cargarFotos();
-    } catch (error) {
-      console.error('Error al subir la foto:', error);
-      alert('Hubo un error al subir la foto. Revisa la consola.');
+    } catch (err) {
+      console.error('Error al subir la foto:', err);
+      setError(true);
     } finally {
       setSubiendo(false);
     }
@@ -87,6 +89,8 @@ export default function Fotos() {
             required
           />
 
+          {error && <p className="form-error">{t('common.error_save')}</p>}
+
           <button type="submit" disabled={subiendo}>
             {subiendo ? t('photos.uploading') : t('photos.upload_button')}
           </button>
@@ -115,7 +119,13 @@ export default function Fotos() {
             <img src={fotoAmpliada.url} alt={fotoAmpliada.titulo || ''} />
             {fotoAmpliada.titulo && <h3>{fotoAmpliada.titulo}</h3>}
             {fotoAmpliada.descripcion && <p>{fotoAmpliada.descripcion}</p>}
-            <button className="fotos-modal__cerrar" onClick={() => setFotoAmpliada(null)}>×</button>
+            <button
+              className="fotos-modal__cerrar"
+              onClick={() => setFotoAmpliada(null)}
+              aria-label={t('common.close')}
+            >
+              ×
+            </button>
           </div>
         </div>
       )}

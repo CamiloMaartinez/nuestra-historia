@@ -33,12 +33,6 @@
   color: var(--color-ink);
 }
 
-.login-form__error {
-  color: var(--color-accent);
-  font-size: 0.8rem;
-  text-align: center;
-}
-
 .login-form button {
   margin-top: var(--space-xs);
   padding: 10px;

@@ -14,6 +14,7 @@ export default function Recuerdos() {
   const [descripcion, setDescripcion] = useState('');
   const [fecha, setFecha] = useState(() => new Date().toISOString().slice(0, 10));
   const [archivoFoto, setArchivoFoto] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     cargarRecuerdos();
@@ -34,6 +35,7 @@ export default function Recuerdos() {
   async function manejarGuardado(e) {
     e.preventDefault();
     setGuardando(true);
+    setError(false);
     try {
       await guardarRecuerdo({ titulo, descripcion, fecha, archivoFoto });
       setTitulo('');
@@ -42,9 +44,9 @@ export default function Recuerdos() {
       setArchivoFoto(null);
       e.target.reset();
       await cargarRecuerdos();
-    } catch (error) {
-      console.error('Error al guardar el recuerdo:', error);
-      alert('Hubo un error al guardar el recuerdo. Revisa la consola.');
+    } catch (err) {
+      console.error('Error al guardar el recuerdo:', err);
+      setError(true);
     } finally {
       setGuardando(false);
     }
@@ -97,6 +99,8 @@ export default function Recuerdos() {
               onChange={(e) => setArchivoFoto(e.target.files[0])}
             />
           </label>
+
+          {error && <p className="form-error">{t('common.error_save')}</p>}
 
           <button type="submit" disabled={guardando}>
             {guardando ? t('memories.saving') : t('memories.save_button')}

@@ -8,6 +8,7 @@ export default function Propuesta() {
     <Reveal>
       <section className="propuesta">
         <span className="propuesta__eyebrow eyebrow">03.01.2026</span>
+        <span className="propuesta__divisor" aria-hidden="true">♥</span>
         <p className="propuesta__texto">{t('home.proposal')}</p>
       </section>
     </Reveal>

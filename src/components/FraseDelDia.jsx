@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import Reveal from './Reveal';
 import './FraseDelDia.css';
 
 function diaDelAnio() {
@@ -14,9 +15,11 @@ export default function FraseDelDia() {
   const indice = diaDelAnio() % frases.length;
 
   return (
-    <div className="frase-del-dia">
-      <span className="frase-del-dia__eyebrow eyebrow">{t('home.daily_phrase_eyebrow')}</span>
-      <p className="frase-del-dia__texto">"{frases[indice]}"</p>
-    </div>
+    <Reveal>
+      <div className="frase-del-dia">
+        <span className="frase-del-dia__eyebrow eyebrow">{t('home.daily_phrase_eyebrow')}</span>
+        <p className="frase-del-dia__texto">"{frases[indice]}"</p>
+      </div>
+    </Reveal>
   );
 }

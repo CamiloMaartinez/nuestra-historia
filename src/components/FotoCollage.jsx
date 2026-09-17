@@ -14,7 +14,7 @@ export default function FotoCollage() {
   if (fotos.length === 0) return null;
 
   return (
-    <div className="foto-collage">
+    <div className="foto-collage" aria-hidden="true">
       {fotos.map((foto, i) => (
         <div className={`foto-collage__item foto-collage__item--${i}`} key={foto.id}>
           <img src={foto.url} alt="" loading="lazy" />

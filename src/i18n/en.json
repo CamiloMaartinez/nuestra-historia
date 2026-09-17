@@ -128,5 +128,23 @@
       "cumple": "My birthday",
       "aniversario": "Dating anniversary"
     }
+  },
+  "theme": {
+    "dark_label": "Dark",
+    "light_label": "Light",
+    "switch_to_dark": "Switch to dark mode",
+    "switch_to_light": "Switch to light mode"
+  },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "desc": "Looks like we haven't written this chapter yet. Let's head back home.",
+    "cta": "Back to home"
+  },
+  "a11y": {
+    "skip_to_content": "Skip to content"
+  },
+  "common": {
+    "error_save": "Something went wrong while saving. Please try again.",
+    "close": "Close"
   }
 }

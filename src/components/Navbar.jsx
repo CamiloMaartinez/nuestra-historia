@@ -2,12 +2,14 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import { cerrarSesion } from '../services/authService';
+import { useTema } from '../hooks/useTema';
 import Seal from './Seal';
 import './Navbar.css';
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const { estaAutenticado } = useAuth();
+  const { tema, alternarTema } = useTema();
   const navigate = useNavigate();
 
   const enlaces = [
@@ -62,6 +64,14 @@ export default function Navbar() {
           onClick={() => cambiarIdioma('en')}
         >
           EN 🇺🇸
+        </button>
+
+        <button
+          className="lang-btn"
+          onClick={alternarTema}
+          aria-label={tema === 'light' ? t('theme.switch_to_dark') : t('theme.switch_to_light')}
+        >
+          {tema === 'light' ? t('theme.dark_label') : t('theme.light_label')}
         </button>
 
         {estaAutenticado ? (
