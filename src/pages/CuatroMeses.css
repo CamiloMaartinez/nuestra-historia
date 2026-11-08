@@ -1,0 +1,182 @@
+/* Candado */
+.cm-candado {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg) var(--space-sm);
+  text-align: center;
+}
+
+.cm-candado__titulo {
+  font-style: italic;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+}
+
+.cm-candado__pista {
+  color: var(--color-ink-soft);
+  max-width: 360px;
+}
+
+.cm-candado__form {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.cm-candado__form input {
+  width: 9rem;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-card);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.cm-candado__form button {
+  padding: 10px 20px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-card);
+  background: var(--color-accent);
+  color: var(--color-bg-card);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.cm-candado__error {
+  min-height: 1.5em;
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+/* Página abierta */
+.cm {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm) var(--space-xl);
+}
+
+.cm-hero {
+  padding: var(--space-lg) 0 0;
+  text-align: center;
+}
+
+.cm-hero__titulo {
+  font-size: clamp(2.6rem, 10vw, 5rem);
+  line-height: 1;
+  margin: var(--space-xs) 0;
+}
+
+.cm-hero__titulo em {
+  color: var(--color-accent);
+}
+
+.cm-hero__sub {
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.cm-linea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-left: var(--space-md);
+  border-left: 1px solid var(--color-gold);
+}
+
+.cm-mes {
+  position: relative;
+}
+
+.cm-mes::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-md) - 5px);
+  top: 0.35em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.cm-mes__numero {
+  color: var(--color-gold);
+}
+
+.cm-mes__titulo {
+  font-style: italic;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  margin: 4px 0 6px;
+}
+
+.cm-mes__texto {
+  color: var(--color-ink-soft);
+  line-height: 1.7;
+}
+
+.cm-carta {
+  position: relative;
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  line-height: 1.8;
+}
+
+.cm-carta p + p {
+  margin-top: var(--space-sm);
+}
+
+.cm-carta__sello {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cm-carta__titulo {
+  font-style: italic;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.cm-carta__firma {
+  text-align: right;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+}
+
+.cm-proximo {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+.cm-proximo__titulo {
+  font-style: italic;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  margin: var(--space-xs) 0;
+}
+
+.cm-proximo p {
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 480px) {
+  .cm-carta {
+    padding: var(--space-lg) var(--space-sm) var(--space-sm);
+  }
+}

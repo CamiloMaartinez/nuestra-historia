@@ -10,6 +10,7 @@ import Recuerdos from './pages/Recuerdos';
 import Fechas from './pages/Fechas';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
+import CuatroMeses from './pages/CuatroMeses';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/recuerdos" element={<Recuerdos />} />
           <Route path="/fechas" element={<Fechas />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/4meses" element={<CuatroMeses />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
