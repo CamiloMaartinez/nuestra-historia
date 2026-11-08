@@ -220,3 +220,191 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Bloques nuevos */
+.cm-bloque {
+  margin-top: var(--space-xl);
+}
+
+.cm-bloque__titulo {
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 4px 0 var(--space-md);
+}
+
+/* Diccionario */
+.cm-dic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm) var(--space-md);
+}
+
+.cm-dic__entrada {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cm-dic__entrada dt {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.cm-dic__palabra {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+.cm-dic__tipo {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cm-dic__entrada dd {
+  margin: 0;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+}
+
+/* Boletos */
+.cm-boletos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cm-boleto {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  border-left: 4px solid var(--color-accent);
+}
+
+.cm-boleto__num {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  padding-right: var(--space-sm);
+  border-right: 1px dashed var(--color-border);
+}
+
+.cm-boleto__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cm-boleto__fecha {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-soft);
+}
+
+.cm-boleto__lugar {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+.cm-boleto__nota {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+.cm-boleto__sello {
+  color: var(--color-accent);
+  font-size: 1.4rem;
+}
+
+/* Lista */
+.cm-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cm-lista__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.05rem;
+}
+
+.cm-lista__check {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--color-gold);
+  border-radius: 6px;
+  color: var(--color-bg-card);
+  font-size: 0.9rem;
+}
+
+.cm-lista__item.is-hecho .cm-lista__check {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.cm-lista__item.is-hecho > span:nth-child(2) {
+  color: var(--color-ink-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-accent);
+}
+
+/* Cuenta regresiva */
+.cm-proximo__dias {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(4rem, 16vw, 7rem);
+  line-height: 1;
+  color: var(--color-accent);
+  margin: var(--space-xs) 0 0;
+}
+
+/* Posdata */
+.cm-posdata {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-ink-soft);
+  font-style: italic;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.cm-posdata__pd {
+  font-family: var(--font-mono);
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+@media (max-width: 640px) {
+  .cm-dic {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-boleto {
+    padding: var(--space-sm);
+  }
+}

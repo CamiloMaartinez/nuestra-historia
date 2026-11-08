@@ -1,8 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Seal from '../components/Seal';
 import Contador from '../components/Contador';
 import Reveal from '../components/Reveal';
-import { CLAVES, PISTA, numeros, meses, carta, proximoCapitulo } from '../data/cuatroMeses';
+import {
+  CLAVES,
+  PISTA,
+  numeros,
+  diccionario,
+  reencuentros,
+  pendientes,
+  DICIEMBRE,
+  posdata,
+} from '../data/cuatroMeses';
 import './CuatroMeses.css';
 
 const LLAVE_GUARDADA = 'cuatro-meses-abierto';
@@ -19,10 +28,21 @@ function yaAbierto() {
   }
 }
 
+function diasParaDiciembre() {
+  const ms = new Date(DICIEMBRE) - new Date();
+  return Math.max(0, Math.ceil(ms / 86400000));
+}
+
 export default function CuatroMeses() {
   const [abierto, setAbierto] = useState(yaAbierto);
   const [intento, setIntento] = useState('');
   const [error, setError] = useState(false);
+  const [dias, setDias] = useState(diasParaDiciembre);
+
+  useEffect(() => {
+    const id = setInterval(() => setDias(diasParaDiciembre()), 60000);
+    return () => clearInterval(id);
+  }, []);
 
   function probarClave(e) {
     e.preventDefault();
@@ -74,7 +94,7 @@ export default function CuatroMeses() {
         <h1 className="cm-hero__titulo">
           Cuatro <em>meses</em>
         </h1>
-        <p className="cm-hero__sub">Lo que pasó después del sí</p>
+        <p className="cm-hero__sub">Nuestro mundo, en pequeño</p>
       </header>
 
       <Contador />
@@ -91,39 +111,72 @@ export default function CuatroMeses() {
         </div>
       </section>
 
-      <section className="cm-linea" aria-label="Nuestros cuatro meses">
-        {meses.map((mes, i) => (
-          <Reveal key={mes.numero} delay={i * 80}>
-            <article className="cm-mes">
-              <span className="cm-mes__numero eyebrow">
-                {mes.numero} · {mes.rango}
-              </span>
-              <h2 className="cm-mes__titulo">{mes.titulo}</h2>
-              <p className="cm-mes__texto">{mes.texto}</p>
-            </article>
-          </Reveal>
-        ))}
-      </section>
+      <Reveal>
+        <section className="cm-bloque" aria-labelledby="cm-dic">
+          <span className="eyebrow">Solo nosotros lo entendemos</span>
+          <h2 id="cm-dic" className="cm-bloque__titulo">Nuestro diccionario</h2>
+          <dl className="cm-dic">
+            {diccionario.map((d) => (
+              <div className="cm-dic__entrada" key={d.palabra}>
+                <dt>
+                  <span className="cm-dic__palabra">{d.palabra}</span>
+                  <span className="cm-dic__tipo">{d.tipo}</span>
+                </dt>
+                <dd>{d.def}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      </Reveal>
 
       <Reveal>
-        <section className="cm-carta">
-          <div className="cm-carta__sello">
-            <Seal size={44} initials="♥" />
-          </div>
-          <h2 className="cm-carta__titulo">{carta.titulo}</h2>
-          {carta.parrafos.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-          <p className="cm-carta__firma">{carta.firma}</p>
+        <section className="cm-bloque" aria-labelledby="cm-boletos">
+          <span className="eyebrow">Kilómetros que valieron la pena</span>
+          <h2 id="cm-boletos" className="cm-bloque__titulo">Cinco reencuentros</h2>
+          <ol className="cm-boletos">
+            {reencuentros.map((r, i) => (
+              <li className="cm-boleto" key={r.fecha}>
+                <span className="cm-boleto__num">0{i + 1}</span>
+                <div className="cm-boleto__cuerpo">
+                  <span className="cm-boleto__fecha">{r.fecha}</span>
+                  <span className="cm-boleto__lugar">{r.lugar}</span>
+                  <span className="cm-boleto__nota">{r.nota}</span>
+                </div>
+                <span className="cm-boleto__sello" aria-hidden="true">♥</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section className="cm-bloque" aria-labelledby="cm-pend">
+          <span className="eyebrow">Lo que ya hicimos y lo que viene</span>
+          <h2 id="cm-pend" className="cm-bloque__titulo">Nuestra lista</h2>
+          <ul className="cm-lista">
+            {pendientes.map((p) => (
+              <li key={p.texto} className={p.hecho ? 'cm-lista__item is-hecho' : 'cm-lista__item'}>
+                <span className="cm-lista__check" aria-hidden="true">{p.hecho ? '✓' : ''}</span>
+                <span>{p.texto}</span>
+                <span className="sr-only">{p.hecho ? '(hecho)' : '(pendiente)'}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       </Reveal>
 
       <Reveal>
         <section className="cm-proximo">
-          <span className="eyebrow">{proximoCapitulo.eyebrow}</span>
-          <h2 className="cm-proximo__titulo">{proximoCapitulo.titulo}</h2>
-          <p>{proximoCapitulo.texto}</p>
+          <span className="eyebrow">Cuenta regresiva</span>
+          <p className="cm-proximo__dias">{dias}</p>
+          <h2 className="cm-proximo__titulo">días para nuestro primer diciembre</h2>
         </section>
+      </Reveal>
+
+      <Reveal>
+        <p className="cm-posdata">
+          <span className="cm-posdata__pd">P. D.</span> {posdata}
+        </p>
       </Reveal>
     </div>
   );
