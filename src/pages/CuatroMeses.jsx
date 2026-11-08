@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Seal from '../components/Seal';
 import Contador from '../components/Contador';
 import Reveal from '../components/Reveal';
-import { CLAVES, PISTA, meses, carta, proximoCapitulo } from '../data/cuatroMeses';
+import { CLAVES, PISTA, numeros, meses, carta, proximoCapitulo } from '../data/cuatroMeses';
 import './CuatroMeses.css';
 
 const LLAVE_GUARDADA = 'cuatro-meses-abierto';
@@ -78,6 +78,18 @@ export default function CuatroMeses() {
       </header>
 
       <Contador />
+
+      <section className="cm-numeros" aria-label="Nuestros números">
+        <span className="eyebrow">Cuatro meses en números</span>
+        <div className="cm-numeros__grid">
+          {numeros.map((n) => (
+            <div className="cm-numero" key={n.label}>
+              <span className="cm-numero__valor">{n.valor}</span>
+              <span className="cm-numero__label">{n.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="cm-linea" aria-label="Nuestros cuatro meses">
         {meses.map((mes, i) => (

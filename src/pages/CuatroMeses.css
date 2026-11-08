@@ -180,3 +180,43 @@
     padding: var(--space-lg) var(--space-sm) var(--space-sm);
   }
 }
+
+/* Números */
+.cm-numeros {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.cm-numeros__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.cm-numero {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-sm) 6px;
+  border-top: 1px solid var(--color-gold);
+}
+
+.cm-numero__valor {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+.cm-numero__label {
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 640px) {
+  .cm-numeros__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
